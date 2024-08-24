@@ -120,22 +120,55 @@
            
         
         <div class="text-center flex flex-col items-center justify-center  mt-32 mb-24">
-                <h1 style="font-family: 'Source Serif 4', serif; font-optical-sizing: auto; font-weight: 520; font-style: bold; align-items:center;" class="text-6xl mx-auto">Grow your design business  <span class="block mt-3"> </span></h1> 
+                <h1 style="font-family: 'Source Serif 4', serif; font-optical-sizing: auto; font-weight: 520; font-style: bold; align-items:center;" class="text-6xl mx-auto">Post a job on Dribbble <span class="block mt-3"> </span></h1> 
                 
-                <h6 style="font-family: 'Open Sans', sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: regular; align-items:center; font-size: 15px;" class="text-2xl mx-auto block mt-6">Get more eyes on your work and stand out with attention grabbing  <span class="block -mt-2"> profile features to attract more opportunities.</span></h6>
+                <h6 style="font-family: 'Open Sans', sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: regular; align-items:center; font-size: 15px;" class="text-2xl mx-auto block mt-6">The #1 job board for hiring designers and creative professionals.  <span class="block -mt-2"> Tell us about your role</span></h6>
     
             </div>
+            <section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a Job Post</h2>
+      <form action="#">
+          <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+              <div class="sm:col-span-2">
+                  <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job/Position Name</label>
+                  <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
+              </div>
+              <div class="w-full">
+                  <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Specialization</label>
+                  <input type="text" name="brand" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Product brand" required="">
+              </div>
+              <div class="w-full">
+                  <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Commission Price</label>
+                  <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="">
+              </div>
+              <div>
+                  <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                  <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                      <option selected="">Select category</option>
+                      <option value="TV">Graphic Design</option>
+                      <option value="PC">UI/UX Design</option>
+                      <option value="GA">Motion Graphics</option>
+                      <option value="PH">Brand Design</option>
+                  </select>
+              </div>
+              <div>
+                  <label for="item-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Years of Experience</label>
+                  <input type="number" name="item-weight" id="item-weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="12" required="">
+              </div> 
+              <div class="sm:col-span-2">
+                  <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                  <textarea id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
+              </div>
+          </div>
+          <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-900">
+              Post Job
+          </button>
+      </form>
+  </div>
+</section>
+            
 
-            <div class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-sm text-center">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 dark:text-white">Reach over
-            10M creatives. </h2>
-            <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">Connect with over 1M brands. No credit card required. </p>
-            <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Free trial for 30 days</a>
-        </div>
-    </div>
-            </div>
                     
             <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.1/flowbite.min.js"></script>
     </body>

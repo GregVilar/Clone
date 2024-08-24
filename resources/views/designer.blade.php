@@ -120,22 +120,27 @@
            
         
         <div class="text-center flex flex-col items-center justify-center  mt-32 mb-24">
-                <h1 style="font-family: 'Source Serif 4', serif; font-optical-sizing: auto; font-weight: 520; font-style: bold; align-items:center;" class="text-6xl mx-auto">Grow your design business  <span class="block mt-3"> </span></h1> 
+                <h1 style="font-family: 'Source Serif 4', serif; font-optical-sizing: auto; font-weight: 520; font-style: bold; align-items:center;" class="text-6xl mx-auto">Search Designers <span class="block mt-3"> </span></h1> 
                 
-                <h6 style="font-family: 'Open Sans', sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: regular; align-items:center; font-size: 15px;" class="text-2xl mx-auto block mt-6">Get more eyes on your work and stand out with attention grabbing  <span class="block -mt-2"> profile features to attract more opportunities.</span></h6>
+               
     
             </div>
 
-            <div class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-sm text-center">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 dark:text-white">Reach over
-            10M creatives. </h2>
-            <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">Connect with over 1M brands. No credit card required. </p>
-            <a href="#" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Free trial for 30 days</a>
+
+            <section class="bg-white dark:bg-gray-900">
+    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+        <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">We didn't reinvent the wheel</h2>
+            <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
+            <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-8">
+            <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
+            <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
         </div>
     </div>
-            </div>
+</section>
+
                     
             <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.1/flowbite.min.js"></script>
     </body>

@@ -66,26 +66,50 @@
                 <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
             </div>
             <ul class="flex flex-col p-4 md:p-0 -mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                 <li>
+                    <a href="{{ route('/welcome') }}" 
+                    class="font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 {{ request()->is('/') ? 'text-blue-500' : '' }}" 
+                    aria-current="page">
+                        Inspiration
+                    </a>
+                </li>
+
                 <li>
-                <a href="{{ route('/welcome') }}"  class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Inspiration</a>
+                <a href="{{ route('/inspiration') }}" class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">Jobs</a>
                 </li>
                 <li>
-                <a href="{{ route('/inspiration') }}" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Jobs</a>
+                <a href="{{ route('/pro') }}"  class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">Go Pro</a>
                 </li>
+
                 <li>
-                <a href="{{ route('/pro') }}"  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Go Pro</a>
-                </li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="font-semibold flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Find Designers <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="{{ route('/designer') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Designer Search</a>
+                  </li>
+                  <li>
+                    <a href="{{ route('/job-post') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Post your Job</a>
+                  </li>
+                
+            </div>
+        </li>
+
+                
 
                 <li>
                 @if (Route::has('login'))
                         
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">Dashboard</a>
+                            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                         @else
-                            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                            <a href="{{ route('login') }}" class="font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
                             @endif
                         @endauth
                     
@@ -97,14 +121,34 @@
         </nav>
            
         
-        <div class="text-center flex flex-col items-center justify-center  mt-32">
+        <div class="text-center flex flex-col items-center justify-center  mt-32 mb-24">
                 <h1 style="font-family: 'Source Serif 4', serif; font-optical-sizing: auto; font-weight: 520; font-style: bold; align-items:center;" class="text-6xl mx-auto">Discover the world’s top  <span class="block mt-3"> designers & creatives</span></h1> 
                 
                 <h6 style="font-family: 'Open Sans', sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: regular; align-items:center; font-size: 15px;" class="text-2xl mx-auto block mt-6">Dribbble is the leading destination to find & showcase creative work and <span class="block -mt-2"> home to the world's best design professionals.</span></h6>
     
             </div>
-
+                
+              
+            <section class="bg-white dark:bg-gray-900">
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Turn your Designs to Reality</h1>
+            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Crafting experiences that blend creativity with purpose, transforming ideas into designs that inspire, connect, and stand the test of time.</p>
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                Get started
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="{{ route('login') }}" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                Create Account Now
+            </a> 
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
+        </div>                
+    </div>
+</section>
                     
-       
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.1/flowbite.min.js"></script>
+
     </body>
 </html>
