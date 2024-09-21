@@ -67,17 +67,17 @@
             </div>
             <ul class="flex flex-col p-4 md:p-0 -mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-                    <a href="{{ route('/welcome') }}" 
+                    <a href="{{ route('welcome') }}" 
                     class="font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">
                         Inspiration
                     </a>
                 </li>
 
                 <li>
-                <a href="{{ route('/inspiration') }}" class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" aria-current="page "  >Jobs</a>
+                <a href="{{ route('inspiration') }}" class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500" aria-current="page "  >Jobs</a>
                 </li>
                 <li>
-                <a href="{{ route('/pro') }}"  class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 {{ request()->is('pro') ? 'text-blue-500' : '' }}">Go Pro</a>
+                <a href="{{ route('pro') }}"  class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 {{ request()->is('pro') ? 'text-blue-500' : '' }}">Go Pro</a>
                 </li>
 
 
@@ -89,10 +89,10 @@
             <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                   <li>
-                    <a href="{{ route('/designer') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Designer Search</a>
+                    <a href="{{ route('designer') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Designer Search</a>
                   </li>
                   <li>
-                    <a href="{{ route('/job-post') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Post your Job</a>
+                    <a href="{{ route('job-post') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Post your Job</a>
                   </li>
                 
             </div>
@@ -102,7 +102,7 @@
                 @if (Route::has('login'))
                         
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">Dashboard</a>
+                            <a href="{{ url('dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}" class="font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
@@ -128,43 +128,43 @@
             <section class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
       <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a Job Post</h2>
-      <form action="#">
-          <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-              <div class="sm:col-span-2">
-                  <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job/Position Name</label>
-                  <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
-              </div>
-              <div class="w-full">
-                  <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Specialization</label>
-                  <input type="text" name="brand" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Product brand" required="">
-              </div>
-              <div class="w-full">
-                  <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Commission Price</label>
-                  <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="">
-              </div>
-              <div>
-                  <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
-                  <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                      <option selected="">Select category</option>
-                      <option value="TV">Graphic Design</option>
-                      <option value="PC">UI/UX Design</option>
-                      <option value="GA">Motion Graphics</option>
-                      <option value="PH">Brand Design</option>
-                  </select>
-              </div>
-              <div>
-                  <label for="item-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Years of Experience</label>
-                  <input type="number" name="item-weight" id="item-weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="12" required="">
-              </div> 
-              <div class="sm:col-span-2">
-                  <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                  <textarea id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here"></textarea>
-              </div>
-          </div>
-          <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-900">
-              Post Job
-          </button>
-      </form>
+      <form>
+    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+        <div class="sm:col-span-2">
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Job/Position Name</label>
+            <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" value="Graphic Designer" readonly>
+        </div>
+        <div class="w-full">
+            <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Specialization</label>
+            <input type="text" name="brand" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" value="UI/UX Design" readonly>
+        </div>
+        <div class="w-full">
+            <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Commission Price</label>
+            <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" value="30" readonly>
+        </div>
+        <div>
+            <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+            <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" disabled>
+                <option selected>Graphic Design</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Motion Graphics">Motion Graphics</option>
+                <option value="Brand Design">Brand Design</option>
+            </select>
+        </div>
+        <div>
+            <label for="item-weight" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Years of Experience</label>
+            <input type="number" name="item-weight" id="item-weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" value="12" readonly>
+        </div> 
+        <div class="sm:col-span-2">
+            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+            <textarea id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" readonly>This is a job for a UI/UX designer with over 12 years of experience in graphic design.</textarea>
+        </div>
+    </div>
+    <button type="button" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-900">
+        Post Job
+    </button>
+</form>
+
   </div>
 </section>
             

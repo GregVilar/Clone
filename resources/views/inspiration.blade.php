@@ -67,17 +67,17 @@
             </div>
             <ul class="flex flex-col p-4 md:p-0 -mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-                    <a href="{{ route('/welcome') }}" 
+                    <a href="{{ route('welcome') }}" 
                     class="font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                         Inspiration
                     </a>
                 </li>
 
                 <li>
-                <a href="{{ route('/inspiration') }}" class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 {{ request()->is('inspiration') ? 'text-blue-500' : '' }}">Jobs</a>
+                <a href="{{ route('inspiration') }}" class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 {{ request()->is('inspiration') ? 'text-blue-500' : '' }}">Jobs</a>
                 </li>
                 <li>
-                <a href="{{ route('/pro') }}"  class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Go Pro</a>
+                <a href="{{ route('pro') }}"  class="font-semibold  text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Go Pro</a>
                 </li>
                 
                 <li>
@@ -88,10 +88,10 @@
             <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                   <li>
-                    <a href="{{ route('/designer') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Designer Search</a>
+                    <a href="{{ route('designer') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Designer Search</a>
                   </li>
                   <li>
-                    <a href="{{ route('/job-post') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Post your Job</a>
+                    <a href="{{ route('job-post') }}" class="block px-4 py-2 font-semibold text-gray hover:bg-gray-300 hover:text-blue-600">Post your Job</a>
                   </li>
                 
             </div>
@@ -103,7 +103,7 @@
                 @if (Route::has('login'))
                         
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">Dashboard</a>
+                            <a href="{{ url('dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}" class="font-semibold text-gray-50 hover:text-blue-500 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
