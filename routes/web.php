@@ -41,15 +41,15 @@ Route::middleware([
         return view('manage-design');
     })->name('manage-design');
 
-    // Manage posts routes
-    Route::get('/manage-post', [PostController::class, 'index'])->name('manage-post');  // List posts view
-    Route::get('/posts-create', [PostController::class, 'create'])->name('posts-create'); // Create post view
-    Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit'); // Edit post view
+    
+    Route::get('/manage-post', [PostController::class, 'index'])->name('manage-post');  // list posts view
+    Route::get('/posts-create', [PostController::class, 'create'])->name('posts-create'); // create post view
+    Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit'); // edit post view
 });
 
-    Route::post('/posts', [PostController::class, 'store'])->name('posts.store'); // Store new post
-    Route::post('/posts/{id}', [PostController::class, 'update'])->name('posts.update'); // Update existing post
-    Route::get('/posts/{id}', [PostController::class, 'show'])->name('users.show'); // Individual post view
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store'); // store new post
+    Route::post('/posts/{id}', [PostController::class, 'update'])->name('posts.update'); // update existing post
+    Route::get('/posts/{id}', [PostController::class, 'show'])->name('users.show'); // indiv post view
 
 
 // Static form view

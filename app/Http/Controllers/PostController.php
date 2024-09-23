@@ -7,23 +7,23 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    // Fetch all posts
+    
     public function index()
     {
         $posts = Post::all();
         return view('manage-post', compact('posts'));
     }
 
-    // Show the form to create a new post
+    // create
     public function create()
     {
         return view('users-create');
     }
 
-    // Store a new post
+    // Store
     public function store(Request $request)
     {
-        // Validate the request data
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'age' => 'required|integer|min:1',
@@ -41,14 +41,14 @@ class PostController extends Controller
         return redirect()->route('manage-post')->with('success', 'Post created successfully!');
     }
 
-    // Show the form to edit an existing post
+    // edit post
     public function edit($id)
     {
         $post = Post::findOrFail($id);
         return view('users-edit', compact('post'));
     }
 
-    // Update an existing post
+    // Update post
     public function update(Request $request, $id)
     {
         $post = Post::findOrFail($id);
@@ -61,14 +61,14 @@ class PostController extends Controller
         return redirect()->route('manage-post')->with('success', 'Post updated successfully!');
     }
 
-    // Show a specific post
+    // show a specific post
     public function show($id)
     {
         $post = Post::findOrFail($id);
         return view('users-show', compact('post'));
     }
 
-    // Delete an existing post
+    // Delete an existing post // di pa tapos
     public function destroy($id)
 {
     $post = Post::findOrFail($id);
