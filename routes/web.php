@@ -50,6 +50,8 @@ Route::middleware([
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store'); // store new post
     Route::post('/posts/{id}', [PostController::class, 'update'])->name('posts.update'); // update existing post
     Route::get('/posts/{id}', [PostController::class, 'show'])->name('users.show'); // indiv post view
+    Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy'); // delete post
+ 
 
 
 // Static form view

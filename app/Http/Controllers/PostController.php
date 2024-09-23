@@ -68,13 +68,15 @@ class PostController extends Controller
         return view('users-show', compact('post'));
     }
 
-    // Delete an existing post // di pa tapos
+    // Delete 
     public function destroy($id)
-{
-    $post = Post::findOrFail($id);
-    $post->delete();
-
-    return redirect()->route('manage-post')->with('success', 'Post deleted successfully!');
-}
+    {
+    
+        $post = Post::findOrFail($id);
+        $post->delete();
+    
+        // Redirect 
+        return redirect()->route('manage-post')->with('success', 'Post deleted successfully!');
+    }
 
 }
