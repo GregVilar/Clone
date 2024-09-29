@@ -18,8 +18,15 @@ class Post extends Model
         'title',
         'description',
     ];
+
+
+    public function user() {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
 }
 
+   
 
 // $table->id();
 // $table->string('name');

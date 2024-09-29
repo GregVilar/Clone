@@ -23,6 +23,10 @@ Route::get('/job-post', function () {
     return view('job-post');
 })->name('job-post');
 
+Route::get('/testing', function () {
+    return view('testing');
+})->name('testing');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -47,6 +51,7 @@ Route::middleware([
     Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit'); // edit post view
 });
 
+    Route::get('/inspiration', [PostController::class, 'index2'])->name('/inspiration');  // list posts view
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store'); // store new post
     Route::post('/posts/{id}', [PostController::class, 'update'])->name('posts.update'); // update existing post
     Route::get('/posts/{id}', [PostController::class, 'show'])->name('users.show'); // indiv post view

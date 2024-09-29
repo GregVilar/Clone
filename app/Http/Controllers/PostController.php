@@ -4,14 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::latest()->paginate(8);
         return view('manage-post', compact('posts'));
+    }
+
+    public function index2()
+    {
+        $posts = Post::latest()->paginate(8);
+        return view('/inspiration', compact('posts'));
     }
 
     // create
@@ -27,16 +35,26 @@ class PostController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'age' => 'required|integer|min:1',
-            'title' => 'required|string|max:255',
+            'title' => 'required|string|unique:posts|max:255',
             'description' => 'required|string',
         ]);
 
-        $post = new Post();
-        $post->name = $request->input('name');
-        $post->age = $request->input('age');
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-        $post->save();
+        // $post = new Post();
+        // $post->name = $request->input('name');
+        // $post->age = $request->input('age');
+        // $post->title = $request->input('title');
+        // $post->description = $request->input('description');
+        // $post->save();
+
+        Post::insert([
+            'name'=> $request->name,
+            'age' => $request->age,
+            'title' => $request->title,
+            'description' => $request->description,
+            'user_id' => Auth::user()->id,
+            'created_at' => Carbon::now(),
+            ]);
+    
 
         return redirect()->route('manage-post')->with('success', 'Post created successfully!');
     }
